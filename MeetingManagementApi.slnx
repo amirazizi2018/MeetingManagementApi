@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="MeetingManagementApi/MeetingManagementApi.csproj" />
+  <Project Path="MeetingManagementApplication/MeetingManagementApplication.csproj" />
+  <Project Path="MeetingManagementDomain/MeetingManagementDomain.csproj" />
+  <Project Path="MeetingManagementInfrastructure/MeetingManagementInfrastructure.csproj" />
+  <Project Path="MeetingManagementPresentation/MeetingManagementPresentation.csproj" />
 </Solution>
