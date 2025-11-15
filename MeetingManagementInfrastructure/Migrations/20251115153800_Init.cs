@@ -68,11 +68,6 @@ namespace MeetingManagementInfrastructure.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "Users",
-                columns: new[] { "Id", "Email", "FirstName", "LastName", "Password", "Role" },
-                values: new object[] { new Guid("7923c8a7-ede6-4831-a735-98ebd700fc35"), "amirazizi67@gmail.com", "امیر", "عزیزی", "$2a$11$mYriolok.RbfktG00wvrMOtw9dqMr5RVURQ8HJw2tkUkQYhd.ylou", 0 });
-
             migrationBuilder.CreateIndex(
                 name: "IX_Resolutions_MeetingId",
                 table: "Resolutions",

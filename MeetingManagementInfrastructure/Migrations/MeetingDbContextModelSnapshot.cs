@@ -106,17 +106,6 @@ namespace MeetingManagementInfrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("7923c8a7-ede6-4831-a735-98ebd700fc35"),
-                            Email = "amirazizi67@gmail.com",
-                            FirstName = "امیر",
-                            LastName = "عزیزی",
-                            Password = "$2a$11$mYriolok.RbfktG00wvrMOtw9dqMr5RVURQ8HJw2tkUkQYhd.ylou",
-                            Role = 0
-                        });
                 });
 
             modelBuilder.Entity("MeetingManagementDomain.Entities.Resolution", b =>
