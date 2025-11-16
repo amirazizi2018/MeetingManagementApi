@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MeetingManagementApplication\MeetingManagementApplication.csproj" />
     <ProjectReference Include="..\MeetingManagementDomain\MeetingManagementDomain.csproj" />
+    <ProjectReference Include="..\MeetingManagementShared\MeetingManagementShared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

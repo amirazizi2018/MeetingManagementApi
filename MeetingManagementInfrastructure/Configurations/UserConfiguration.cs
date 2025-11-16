@@ -1,4 +1,5 @@
 ﻿using MeetingManagementDomain.Entities;
+using MeetingManagementShared.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -48,7 +49,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
                 LastName = "عزیزی",
                 Email = "admin@gmail.com",
                 Password = "$2a$11$PApAaAqms9uDUO5iRKiNce8sYcVSg4wxBSho1AUbNtiiQjl/9R67.",
-                Role = Role.Admin,
+                Role = UserRole.Admin,
                 CreatedAt = new DateTime(2025, 11, 16, 0, 0, 0, DateTimeKind.Utc),
                 UpdatedAt = new DateTime(2025, 11, 16, 0, 0, 0, DateTimeKind.Utc)
             },
@@ -59,7 +60,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
                 LastName = "منصوری",
                 Email = "ali@gmail.com",
                 Password = "$2a$11$L4mbMrzlIbCGfoDxS3Q.H.vBlMXf4zipRi7axon5SXVbNEuqXvIlW",
-                Role = Role.Member,
+                Role = UserRole.Member,
                 CreatedAt = new DateTime(2025, 11, 16, 0, 0, 0, DateTimeKind.Utc),
                 UpdatedAt = new DateTime(2025, 11, 16, 0, 0, 0, DateTimeKind.Utc)
             },
@@ -70,7 +71,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
                 LastName = "مقدسی",
                 Email = "mohammad@gmail.com",
                 Password = "$2a$11$57s53U4BtYwe6SrCZraP7u1JWycYZToWC9M5NNkBw9G58qhXl7hUO",
-                Role = Role.Member,
+                Role = UserRole.Member,
                 CreatedAt = new DateTime(2025, 11, 16, 0, 0, 0, DateTimeKind.Utc),
                 UpdatedAt = new DateTime(2025, 11, 16, 0, 0, 0, DateTimeKind.Utc)
             },
@@ -81,7 +82,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
                 LastName = "احسانی",
                 Email = "hassan@gmail.com",
                 Password = "$2a$11$K9/BW2vLSJzDhIxpbLvkreFEipNpKSy4GLlkD1fvuR8J7jltaduV2",
-                Role = Role.Member,
+                Role = UserRole.Member,
                 CreatedAt = new DateTime(2025, 11, 16, 0, 0, 0, DateTimeKind.Utc),
                 UpdatedAt = new DateTime(2025, 11, 16, 0, 0, 0, DateTimeKind.Utc)
             }

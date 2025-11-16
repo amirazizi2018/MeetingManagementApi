@@ -3,4 +3,5 @@
   <Project Path="MeetingManagementDomain/MeetingManagementDomain.csproj" />
   <Project Path="MeetingManagementInfrastructure/MeetingManagementInfrastructure.csproj" />
   <Project Path="MeetingManagementPresentation/MeetingManagementPresentation.csproj" />
+  <Project Path="MeetingManagementShared/MeetingManagementShared.csproj" Id="cb1e83cf-2399-4b45-9584-332a5fa5b79a" />
 </Solution>
