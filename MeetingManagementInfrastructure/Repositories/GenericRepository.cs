@@ -13,9 +13,9 @@ public class GenericRepository<T>(MeetingDbContext context) : IGenericRepository
 
     public async Task<T?> Get(Expression<Func<T, bool>> predicate) => await _dbSet.FirstOrDefaultAsync(predicate);
     
-    public IEnumerable<T> GetAll() => _dbSet.ToList();
+    public async Task<IEnumerable<T>> GetAll() => await _dbSet.ToListAsync();
 
-    public void Add(T entity) => _dbSet.Add(entity);
+    public async Task Add(T entity) => await _dbSet.AddAsync(entity);
 
     public void Update(T entity) => _dbSet.Update(entity);
 

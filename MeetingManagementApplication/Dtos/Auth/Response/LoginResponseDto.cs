@@ -2,7 +2,7 @@
 
 namespace MeetingManagementApplication.Dtos.Auth.Response;
 
-public class AdminLoginResponseDto
+public class LoginResponseDto
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string? Token { get; set; } = null!;

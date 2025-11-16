@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MeetingManagementApplication.Dtos.Auth.Command;
 
-public class AdminLoginCommandDto: IValidatableObject
+public class LoginCommandDto: IValidatableObject
 {
     [Required(ErrorMessage = "ایمیل الزامی است")]
     [EmailAddress(ErrorMessage = "ایمیل وارد شده معتبر نیست")]

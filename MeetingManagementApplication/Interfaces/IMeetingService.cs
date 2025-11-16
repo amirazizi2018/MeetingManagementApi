@@ -3,8 +3,8 @@ using MeetingManagementDomain.Entities;
 
 namespace MeetingManagementApplication.Interfaces;
 
-public interface IAuthService
+public interface IMeetingService
 {
-    Task<User?> Authenticate(LoginCommandDto command);
+    Task<IEnumerable<Meeting>> GetAllMeeting();
 
 }

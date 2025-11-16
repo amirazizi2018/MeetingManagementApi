@@ -10,7 +10,7 @@ namespace MeetingManagementApplication.Services;
 
 public class AuthService(IGenericRepository<User> userRepo) : IAuthService
 {
-    public async Task<User?> Authenticate(AdminLoginCommandDto command)
+    public async Task<User?> Authenticate(LoginCommandDto command)
     {
 
         var parsedRole = EnumHelper.ParseEnum<UserRole>(command.Role, "نقش");

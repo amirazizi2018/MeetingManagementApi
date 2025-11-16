@@ -14,7 +14,7 @@ namespace MeetingManagementPresentation.Controllers
     public class AuthController(IAuthService authService, JwtService jwtService) : BaseApiController
     {
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] AdminLoginCommandDto command)
+        public async Task<IActionResult> Login([FromBody] LoginCommandDto command)
         {
             var parsedRole = EnumHelper.ParseEnum<UserRole>(command.Role, "نقش");
 
@@ -38,7 +38,7 @@ namespace MeetingManagementPresentation.Controllers
             }
 
 
-            var response = new AdminLoginResponseDto
+            var response = new LoginResponseDto
             {
                 Token = parsedRole == UserRole.Member ? token : null,
                 UserInfo = new UserDto

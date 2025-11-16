@@ -42,6 +42,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IMeetingService, MeetingService>();
 builder.Services.AddScoped<JwtService>();
 
 builder.Services.Configure<ApiBehaviorOptions>(options =>
