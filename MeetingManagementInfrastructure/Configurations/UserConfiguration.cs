@@ -38,18 +38,20 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(u => u.UpdatedAt)
             .IsRequired();
-
-
-        //builder.HasData(new User
-        //{
-        //    Id = Guid.Parse("7923C8A7-EDE6-4831-A735-98EBD700FC35"),
-        //    FirstName = "امیر",
-        //    LastName = "عزیزی",
-        //    Email = "amirazizi67@gmail.com",
-        //    Password = BCrypt.Net.BCrypt.HashPassword("123456@Aa"),
-        //    Password = "$2a$11$mYriolok.RbfktG00wvrMOtw9dqMr5RVURQ8HJw2tkUkQYhd.ylou",
-        //    Role = Role.Admin
-        //});
+        
+        
+        builder.HasData(new User
+        {
+            Id = Guid.Parse("7923C8A7-EDE6-4831-A735-98EBD700FC35"),
+            FirstName = "امیر",
+            LastName = "عزیزی",
+            Email = "amirazizi67@gmail.com",
+            //Password = BCrypt.Net.BCrypt.HashPassword("123456@Aa"),
+            Password = "$2a$11$mYriolok.RbfktG00wvrMOtw9dqMr5RVURQ8HJw2tkUkQYhd.ylou",
+            Role = Role.Admin,
+            CreatedAt = new DateTime(2025, 11, 16, 0, 0, 0, DateTimeKind.Utc),
+            UpdatedAt = new DateTime(2025, 11, 16, 0, 0, 0, DateTimeKind.Utc)
+        });
 
     }
 }
