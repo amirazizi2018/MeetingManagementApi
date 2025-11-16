@@ -2,9 +2,8 @@
 
 namespace MeetingManagementDomain.Entities;
 
-public class User
+public class User: BaseEntity
 {
-    public Guid Id { get; set; }
 
     public required string FirstName { get; set; }
 

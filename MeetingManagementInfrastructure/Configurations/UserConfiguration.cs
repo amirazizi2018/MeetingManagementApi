@@ -26,11 +26,19 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             .IsRequired();
 
         builder.Property(u => u.Role)
+            .HasConversion<string>()
             .IsRequired();
 
         builder.HasMany(u => u.AssignedResolutions)
             .WithOne(r => r.AssignedTo)
             .HasForeignKey(r => r.UserId);
+
+        builder.Property(u => u.CreatedAt)
+            .IsRequired();
+
+        builder.Property(u => u.UpdatedAt)
+            .IsRequired();
+
 
         //builder.HasData(new User
         //{

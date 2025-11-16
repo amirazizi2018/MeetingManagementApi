@@ -19,11 +19,18 @@ public class MeetingConfiguration: IEntityTypeConfiguration<Meeting>
             .IsRequired()
             .HasMaxLength(1000);
 
-        builder.Property(m => m.CreatedAt)
+        builder.Property(m => m.MeetingDate)
             .IsRequired();
 
         builder.HasMany(m => m.Resolutions)
             .WithOne(r => r.Meeting)
             .HasForeignKey(r => r.MeetingId);
+
+        builder.Property(u => u.CreatedAt)
+            .IsRequired();
+
+        builder.Property(u => u.UpdatedAt)
+            .IsRequired();
+
     }
 }

@@ -25,5 +25,12 @@ public class ResolutionConfiguration: IEntityTypeConfiguration<Resolution>
             .WithMany(u => u.AssignedResolutions)
             .HasForeignKey(r => r.UserId);
 
+        builder.Property(u => u.CreatedAt)
+            .IsRequired();
+
+        builder.Property(u => u.UpdatedAt)
+            .IsRequired();
+
+
     }
 }

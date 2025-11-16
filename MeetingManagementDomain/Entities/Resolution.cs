@@ -1,8 +1,7 @@
 ﻿namespace MeetingManagementDomain.Entities;
 
-public class Resolution
+public class Resolution: BaseEntity
 {
-    public Guid Id { get; set; }
 
     public required string Content { get; set; }
     
