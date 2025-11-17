@@ -10,10 +10,14 @@ public class GenericRepository<T>(MeetingDbContext context) : IGenericRepository
     private readonly MeetingDbContext _context = context;
     private readonly DbSet<T> _dbSet = context.Set<T>();
 
-
+    
     public async Task<T?> Get(Expression<Func<T, bool>> predicate) => await _dbSet.FirstOrDefaultAsync(predicate);
     
     public async Task<IEnumerable<T>> GetAll() => await _dbSet.ToListAsync();
+    public async Task<IEnumerable<T>> GetMany(Expression<Func<T, bool>> predicate)
+    {
+        return await _dbSet.Where(predicate).ToListAsync();
+    }
 
     public async Task Add(T entity) => await _dbSet.AddAsync(entity);
 
