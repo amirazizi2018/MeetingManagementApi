@@ -5,11 +5,11 @@ using MeetingManagementDomain.Entities;
 
 namespace MeetingManagementApplication.Services;
 
-public class MeetingService(IGenericRepository<Meeting> meetingRepo, IUnitOfWork unitOfWork) : IMeetingService
+public class MeetingService(IUnitOfWork unitOfWork) : IMeetingService
 {
     public async Task<IEnumerable<Meeting>> GetAllMeeting()
     {
-        var meetings = await meetingRepo.GetAll();
+        var meetings = await unitOfWork.MeetingRepository.GetAll();
         return meetings;
     }
 
@@ -30,7 +30,7 @@ public class MeetingService(IGenericRepository<Meeting> meetingRepo, IUnitOfWork
             }).ToList()
         };
 
-        await meetingRepo.Add(meeting);
+        await unitOfWork.MeetingRepository.Add(meeting);
         await unitOfWork.SaveChangesAsync();
 
         return meeting.Id;

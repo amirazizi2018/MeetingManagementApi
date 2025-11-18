@@ -1,5 +1,4 @@
-﻿using MeetingManagementApplication.Dtos.Meeting.Command;
-using MeetingManagementApplication.Interfaces;
+﻿using MeetingManagementApplication.Interfaces;
 using MeetingManagementApplication.Interfaces.Persistence;
 using MeetingManagementDomain.Entities;
 
