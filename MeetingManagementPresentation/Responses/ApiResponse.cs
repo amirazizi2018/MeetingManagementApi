@@ -6,7 +6,7 @@ public class ApiResponse<T>(string message, T? data = default, List<string>? err
 {
     public string Message { get; set; } = message;
     
-    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public T? Data { get; set; } = data;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Dtos\Meeting\Command\" />
+    <Folder Include="Interfaces\Persistence\" />
   </ItemGroup>
 
 </Project>

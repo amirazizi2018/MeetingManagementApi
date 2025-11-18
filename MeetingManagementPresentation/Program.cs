@@ -1,6 +1,8 @@
 ﻿using MeetingManagementApplication.Interfaces;
+using MeetingManagementApplication.Interfaces.Persistence;
 using MeetingManagementApplication.Services;
 using MeetingManagementInfrastructure;
+using MeetingManagementInfrastructure.Persistence;
 using MeetingManagementInfrastructure.Repositories;
 using MeetingManagementPresentation.Middleware;
 using MeetingManagementPresentation.Responses;
@@ -8,9 +10,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,9 +42,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IMeetingService, MeetingService>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<JwtService>();
 
 builder.Services.Configure<ApiBehaviorOptions>(options =>
@@ -70,7 +74,7 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
-
+app.UseMiddleware<JwtFromCookieMiddleware>();
 app.UseAuthentication();
 
 app.UseAuthorization();

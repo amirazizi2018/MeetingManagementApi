@@ -15,6 +15,7 @@ public class Resolution: BaseEntity
 
     public User? AssignedTo { get; set; }
 
-    
+    public int ProgressPercent { get; set; } = 0;
+
 
 }
