@@ -47,6 +47,7 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositor
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IMeetingService, MeetingService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IResolutionService, ResolutionService>();
 builder.Services.AddScoped<JwtService>();
 
 builder.Services.Configure<ApiBehaviorOptions>(options =>

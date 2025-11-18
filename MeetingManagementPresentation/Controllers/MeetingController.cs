@@ -1,6 +1,6 @@
 ﻿using MeetingManagementApplication.Dtos.Meeting.Command;
-using MeetingManagementApplication.Dtos.Meeting.Response;
 using MeetingManagementApplication.Interfaces;
+using MeetingManagementShared.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,6 +11,7 @@ namespace MeetingManagementPresentation.Controllers
     public class MeetingController(IMeetingService meetingService) : BaseApiController
     {
         [HttpGet]
+        //[Authorize(Roles = Roles.Admin)]
         public async Task<IActionResult> GetMeetings()
         {
             
@@ -21,7 +22,7 @@ namespace MeetingManagementPresentation.Controllers
         }
         
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = Roles.Admin)]
         public async Task<IActionResult> CreateMeeting(CreateMeetingCommandDto command)
         {
             

@@ -2,7 +2,6 @@
 using MeetingManagementApplication.Interfaces;
 using MeetingManagementDomain.Entities;
 using MeetingManagementShared.Enums;
-using MeetingManagementShared.Extensions;
 using MeetingManagementShared.Helper;
 
 

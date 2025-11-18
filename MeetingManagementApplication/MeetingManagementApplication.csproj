@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Dtos\Resolution\Command\" />
     <Folder Include="Interfaces\Persistence\" />
   </ItemGroup>
 
