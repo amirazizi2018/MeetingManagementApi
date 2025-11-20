@@ -20,6 +20,7 @@ public class MeetingService(IUnitOfWork unitOfWork) : IMeetingService
             Id = Guid.NewGuid(),
             Title = command.Title,
             Description = command.Description,
+            MeetingDate = command.MeetingDate,
             CreatedAt = DateTime.UtcNow,
             Resolutions = command.Resolutions.Select(res => new Resolution
             {
